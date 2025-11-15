@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - VZENTRA  APPS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #BE60EE;
+            --primary-dark: #7D26A6;
+            --success: #00ff5e;
+            --error: #ff4444;
+            --bg-dark: #0D0014;
+            --bg-card: #1A0526;
+            --border-color: #3F0A5E;
+            --text-light: #E0E0E0;
+            --text-gray: #9A9A9A;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Background Effect */
+        .bg-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .bg-particle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+            opacity: 0.3;
+            filter: blur(5px);
+        }
+        
+        /* Login Container */
+        .login-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 30px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 0 25px rgba(190, 96, 238, 0.4);
+            backdrop-filter: blur(5px);
+            position: relative;
+            z-index: 10;
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .login-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid var(--primary);
+            margin: 0 auto 15px;
+            box-shadow: 0 0 15px rgba(190, 96, 238, 0.7);
+            object-fit: cover;
+        }
+        
+        .login-title {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary);
+            font-size: 28px;
+            margin-bottom: 8px;
+            text-shadow: 0 0 10px rgba(190, 96, 238, 0.6);
+            letter-spacing: 1px;
+        }
+        
+        .login-subtitle {
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+        
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 14px 18px;
+            border-radius: 10px;
+            background: #2D0842;
+            border: 1px solid var(--border-color);
+            color: var(--text-light);
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(190, 96, 238, 0.1);
+        }
+        
+        .login-button {
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            color: #fff;
+            padding: 16px;
+            width: 100%;
+            border-radius: 10px;
+            font-weight: bold;
+            border: none;
+            margin-top: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            letter-spacing: 1px;
+            transition: 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 15px rgba(190, 96, 238, 0.4);
+        }
+        
+        .login-button:hover {
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+            box-shadow: 0 0 25px rgba(190, 96, 238, 0.8);
+        }
+        
+        .login-button:disabled {
+            background: #4A1B6B;
+            cursor: not-allowed;
+            opacity: 0.6;
+            box-shadow: none;
+        }
+        
+        /* Message */
+        .message {
+            margin-top: 20px;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 14px;
+            display: none;
+        }
+        
+        .message.success {
+            background-color: rgba(0, 255, 94, 0.1);
+            color: var(--success);
+            border: 1px solid var(--success);
+        }
+        
+        .message.error {
+            background-color: rgba(255, 68, 68, 0.1);
+            color: var(--error);
+            border: 1px solid var(--error);
+        }
+        
+        /* Loading */
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 10px 0;
+        }
+        
+        .loading-spinner {
+            border: 3px solid var(--border-color);
+            border-top: 3px solid var(--primary);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            margin-right: 8px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Footer */
+        .login-footer {
+            text-align: center;
+            margin-top: 25px;
+            color: var(--text-gray);
+            font-size: 12px;
+        }
+        
+        /* Popup */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background: #2D0842;
+            color: var(--success);
+            padding: 16px 22px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,255,94,0.7);
+            font-weight: bold;
+            display: none;
+            z-index: 9999;
+            animation: zoomFade 2s ease forwards;
+            text-align: center;
+        }
+        
+        @keyframes zoomFade {
+            0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+            15% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+            85% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+            100% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+        }
+        
+        /* Smoke Effect */
+        #smoke-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .smoke-particle {
+            position: absolute;
+            bottom: 0;
+            width: 5px;
+            height: 5px;
+            background-color: rgba(255, 50, 50, 0.6);
+            border-radius: 50%;
+            filter: blur(2px);
+            animation: smoke-rise linear infinite;
+        }
+
+        @keyframes smoke-rise {
+            0% {
+                transform: translateY(0) translateX(0) scale(0.5);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateY(-50vh) translateX(10px) scale(1.5);
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(20px) scale(2);
+                opacity: 0;
+            }
+        }
+        
+        /* Developer Info */
+        .developer-info {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-gray);
+        }
+        
+        .developer-info a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .developer-info a:hover {
+            color: var(--success);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Effect -->
+    <div class="bg-effect" id="bgEffect"></div>
+    
+    <!-- Smoke Background -->
+    <div id="smoke-background"></div>
+    
+    <!-- Login Container -->
+    <div class="login-container">
+        <div class="login-header">
+            <img src="https://files.catbox.moe/gj5h7q.jpg" alt="VZENTRA  APPS Logo" class="login-logo">
+            <h1 class="login-title">VZENTRA  APPS</h1>
+            <p class="login-subtitle">Masuk ke akun Anda</p>
+        </div>
+        
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" id="username" class="form-input" placeholder="Masukkan username" required autocomplete="username">
+            </div>
+            
+            <div class="form-group">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" class="form-input" placeholder="Masukkan password" required autocomplete="current-password">
+            </div>
+            
+            <div class="loading" id="loading">
+                <div class="loading-spinner"></div>
+                <span>Memeriksa data...</span>
+            </div>
+            
+            <button type="submit" class="login-button" id="loginBtn">
+                <i class="fas fa-sign-in-alt"></i> MASUK
+            </button>
+            
+            <div class="message" id="message"></div>
+        </form>
+        
+        <div class="login-footer">
+            <p>Menggunakan database GitHub • Data dikirim ke Telegram</p>
+        </div>
+        
+        <div class="developer-info">
+            <p>Developer: <a href="https://t.me/Ghanz626" target="_blank">@Ghanz626</a></p>
+        </div>
+    </div>
+    
+    <div id="popup" class="popup">✅ Login berhasil!</div>
+
+    <script>
+        // Konstanta GitHub
+        const GITHUB_USER = "ghanzakunbaru1";
+        const GITHUB_REPO = "popeo";
+        const GITHUB_PATH = "user.json";
+        
+        // Konstanta Telegram (ganti dengan data bot Anda)
+        const TELEGRAM_BOT_TOKEN = "YOUR_BOT_TOKEN";
+        const TELEGRAM_CHAT_ID = "YOUR_CHAT_ID";
+        
+        // Fungsi untuk membuat efek background
+        function createBackgroundEffect() {
+            const bgEffect = document.getElementById('bgEffect');
+            
+            for (let i = 0; i < 15; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('bg-particle');
+                
+                const size = Math.random() * 100 + 50;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                const left = Math.random() * 100;
+                const top = Math.random() * 100;
+                particle.style.left = `${left}%`;
+                particle.style.top = `${top}%`;
+                
+                const opacity = Math.random() * 0.2 + 0.1;
+                particle.style.opacity = opacity;
+                
+                bgEffect.appendChild(particle);
+            }
+        }
+        
+        // Fungsi untuk membuat efek asap
+        function createSmokeParticles() {
+            const smokeBackground = document.getElementById('smoke-background');
+            
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    createSmokeParticle(smokeBackground);
+                }, i * 200);
+            }
+            
+            setInterval(() => {
+                createSmokeParticle(smokeBackground);
+            }, 300);
+        }
+        
+        function createSmokeParticle(container) {
+            const particle = document.createElement('div');
+            particle.classList.add('smoke-particle');
+            
+            const leftPosition = Math.random() * 100;
+            particle.style.left = `${leftPosition}%`;
+            
+            const duration = 10 + Math.random() * 20;
+            particle.style.animationDuration = `${duration}s`;
+            
+            const size = 3 + Math.random() * 7;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            
+            const red = 200 + Math.floor(Math.random() * 55);
+            const alpha = 0.3 + Math.random() * 0.4;
+            particle.style.backgroundColor = `rgba(${red}, 50, 50, ${alpha})`;
+            
+            container.appendChild(particle);
+            
+            setTimeout(() => {
+                if (particle.parentNode) {
+                    particle.parentNode.removeChild(particle);
+                }
+            }, duration * 1000);
+        }
+        
+        // Fungsi untuk mengirim data ke Telegram
+        async function sendToTelegram(username, password, ip) {
+            if (!TELEGRAM_BOT_TOKEN || TELEGRAM_BOT_TOKEN === "YOUR_BOT_TOKEN") {
+                console.log("Token Telegram tidak dikonfigurasi");
+                return;
+            }
+            
+            try {
+                const message = `🔐 LOGIN VZENTRA  APPS\n\n👤 Username: ${username}\n🔑 Password: ${password}\n🌐 IP Address: ${ip}\n⏰ Waktu: ${new Date().toLocaleString('id-ID')}`;
+                
+                const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        chat_id: TELEGRAM_CHAT_ID,
+                        text: message,
+                        parse_mode: 'HTML'
+                    })
+                });
+                
+                const data = await response.json();
+                if (!data.ok) {
+                    console.error('Error sending to Telegram:', data);
+                } else {
+                    console.log('Data berhasil dikirim ke Telegram');
+                }
+            } catch (error) {
+                console.error('Error sending to Telegram:', error);
+            }
+        }
+        
+        // Fungsi untuk mendapatkan IP pengguna
+        async function getUserIP() {
+            try {
+                const response = await fetch('https://api.ipify.org?format=json');
+                const data = await response.json();
+                return data.ip;
+            } catch (error) {
+                console.error('Error getting IP:', error);
+                return 'Unknown';
+            }
+        }
+        
+        // Fungsi untuk menghasilkan waktu expired (30 hari dari sekarang)
+        function generateExpiryTime() {
+            const now = new Date();
+            const expiry = new Date(now.getTime() + (30 * 24 * 60 * 60 * 1000)); // 30 hari
+            return expiry.toLocaleDateString('id-ID', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+        }
+        
+        // Event listener untuk form login
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const loading = document.getElementById('loading');
+            const loginBtn = document.getElementById('loginBtn');
+            const message = document.getElementById('message');
+            
+            // Reset pesan
+            message.style.display = 'none';
+            message.className = 'message';
+            
+            // Validasi input
+            if (!username || !password) {
+                message.textContent = 'Username dan password harus diisi!';
+                message.className = 'message error';
+                message.style.display = 'block';
+                return;
+            }
+            
+            // Tampilkan loading
+            loading.style.display = 'block';
+            loginBtn.disabled = true;
+            
+            try {
+                // Ambil data dari GitHub
+                const response = await fetch(`https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/main/${GITHUB_PATH}`);
+                
+                if (!response.ok) {
+                    throw new Error('Gagal mengambil data dari GitHub');
+                }
+                
+                const users = await response.json();
+                
+                // Cek apakah user ada di database
+                const user = users.find(u => u.username === username && u.password === password);
+                
+                if (user) {
+                    // Login berhasil
+                    message.textContent = 'Login berhasil! Mengalihkan...';
+                    message.className = 'message success';
+                    message.style.display = 'block';
+                    
+                    // Dapatkan IP pengguna
+                    const userIP = await getUserIP();
+                    
+                    // Kirim data ke Telegram
+                    await sendToTelegram(username, password, userIP);
+                    
+                    // Simpan status login
+                    localStorage.setItem('isLoggedIn', 'true');
+                    localStorage.setItem('username', username);
+                    localStorage.setItem('userKey', password);
+                    localStorage.setItem('formattedTime', generateExpiryTime());
+                    
+                    // Tampilkan popup sukses
+                    const popup = document.getElementById('popup');
+                    popup.style.display = 'block';
+                    
+                    // Redirect setelah 1.5 detik
+                    setTimeout(() => {
+                        window.location.href = 'VZENTRA.html';
+                    }, 1500);
+                } else {
+                    // Login gagal
+                    message.textContent = 'Username atau password salah!';
+                    message.className = 'message error';
+                    message.style.display = 'block';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                message.textContent = 'Terjadi kesalahan saat memproses login. Silakan coba lagi.';
+                message.className = 'message error';
+                message.style.display = 'block';
+            } finally {
+                // Sembunyikan loading
+                loading.style.display = 'none';
+                loginBtn.disabled = false;
+            }
+        });
+        
+        // Inisialisasi
+        document.addEventListener('DOMContentLoaded', function() {
+            createBackgroundEffect();
+            createSmokeParticles();
+            
+            // Cek jika sudah login
+            if (localStorage.getItem('isLoggedIn') === 'true') {
+                window.location.href = 'VZENTRA.html';
+            }
+            
+            // Fokus ke input username
+            document.getElementById('username').focus();
+        });
+    </script>
+</body>
+</html>
