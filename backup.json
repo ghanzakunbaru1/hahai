@@ -1,39 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-06T11:56:09.965Z",
-  "users": [
-    {
-      "id": "e301bf12-70f8-412c-9177-ce2a59d56aea",
-      "username": "radhityagp3@gmail.com",
-      "email": "",
-      "name": "radhityagp3@gmail.com",
-      "avatar": "",
-      "bio": "",
-      "theme": "dark",
-      "createdAt": "2026-10-05T14:14:39.881Z"
-    },
-    {
-      "id": "881e71be-5f07-41c8-a2b0-5442ca1d9d0e",
-      "username": "radhityagp34@gmail.com",
-      "email": "",
-      "name": "radhityagp34@gmail.com",
-      "avatar": "",
-      "bio": "",
-      "theme": "dark",
-      "createdAt": "2026-10-06T11:53:33.092Z"
-    }
-  ],
+  "generatedAt": "2026-10-06T12:06:05.646Z",
+  "users": [],
   "vault": [],
-  "streaks": [
-    {
-      "id": "52b5fb13-f692-497b-a509-66bc18b76d21",
-      "userId": "e301bf12-70f8-412c-9177-ce2a59d56aea",
-      "date": "2026-10-06"
-    },
-    {
-      "id": "d9b9bf1e-5b59-4e0d-bdeb-c94926ee000f",
-      "userId": "881e71be-5f07-41c8-a2b0-5442ca1d9d0e",
-      "date": "2026-10-06"
-    }
-  ]
+  "streaks": []
 }
