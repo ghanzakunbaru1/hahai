@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-07T05:46:20.261Z",
+  "generatedAt": "2026-10-07T05:55:47.880Z",
   "users": [
     {
       "id": "e301bf12-70f8-412c-9177-ce2a59d56aea",
@@ -10,7 +10,8 @@
       "avatar": "",
       "bio": "",
       "theme": "dark",
-      "createdAt": "2026-10-05T14:14:39.881Z"
+      "createdAt": "2026-10-05T14:14:39.881Z",
+      "passwordHash": "$2a$12$j3vCkZCalD5w/enImt9pZu3tThymzHfBtRywVuQBVWcTeAcEsnLCW"
     },
     {
       "id": "881e71be-5f07-41c8-a2b0-5442ca1d9d0e",
@@ -20,7 +21,8 @@
       "avatar": "",
       "bio": "",
       "theme": "dark",
-      "createdAt": "2026-10-06T11:53:33.092Z"
+      "createdAt": "2026-10-06T11:53:33.092Z",
+      "passwordHash": "$2a$12$GERFkVM427ABSxyMwU0gSuUV7VxosY2wtO4mo1o6pjK9kC5ornl9a"
     }
   ],
   "vault": [],
