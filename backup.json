@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-07T09:33:25.477Z",
+  "generatedAt": "2026-10-07T09:44:19.314Z",
   "users": [
     {
       "id": "e301bf12-70f8-412c-9177-ce2a59d56aea",
@@ -31,7 +31,7 @@
       "name": "ghaz",
       "avatar": "",
       "bio": "",
-      "theme": "dark",
+      "theme": "light",
       "createdAt": "2026-10-07T09:33:08.994Z",
       "passwordHash": "$2a$12$7QX0W8PDXoJMMGINEooCKO9Rb6WBFY9J67gUqd22f4H9w/Bn9hKxe"
     }
