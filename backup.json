@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-07T05:55:47.880Z",
+  "generatedAt": "2026-10-07T08:35:21.838Z",
   "users": [
     {
       "id": "e301bf12-70f8-412c-9177-ce2a59d56aea",
@@ -10,8 +10,7 @@
       "avatar": "",
       "bio": "",
       "theme": "dark",
-      "createdAt": "2026-10-05T14:14:39.881Z",
-      "passwordHash": "$2a$12$j3vCkZCalD5w/enImt9pZu3tThymzHfBtRywVuQBVWcTeAcEsnLCW"
+      "createdAt": "2026-10-05T14:14:39.881Z"
     },
     {
       "id": "881e71be-5f07-41c8-a2b0-5442ca1d9d0e",
@@ -21,8 +20,7 @@
       "avatar": "",
       "bio": "",
       "theme": "dark",
-      "createdAt": "2026-10-06T11:53:33.092Z",
-      "passwordHash": "$2a$12$GERFkVM427ABSxyMwU0gSuUV7VxosY2wtO4mo1o6pjK9kC5ornl9a"
+      "createdAt": "2026-10-06T11:53:33.092Z"
     }
   ],
   "vault": [],
@@ -36,11 +34,6 @@
       "id": "d9b9bf1e-5b59-4e0d-bdeb-c94926ee000f",
       "userId": "881e71be-5f07-41c8-a2b0-5442ca1d9d0e",
       "date": "2026-10-06"
-    },
-    {
-      "id": "239d5fe6-b46b-4aa7-b0de-1640f87cade4",
-      "userId": "e301bf12-70f8-412c-9177-ce2a59d56aea",
-      "date": "2026-10-07"
     }
   ]
 }
