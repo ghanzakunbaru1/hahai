@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-07T09:33:17.051Z",
+  "generatedAt": "2026-10-07T09:33:25.477Z",
   "users": [
     {
       "id": "e301bf12-70f8-412c-9177-ce2a59d56aea",
@@ -51,6 +51,11 @@
     {
       "id": "239d5fe6-b46b-4aa7-b0de-1640f87cade4",
       "userId": "e301bf12-70f8-412c-9177-ce2a59d56aea",
+      "date": "2026-10-07"
+    },
+    {
+      "id": "ebdffd44-5924-4d38-8267-8ad829a26f3a",
+      "userId": "de2f4296-efd1-4103-bf74-37f7691fa6d7",
       "date": "2026-10-07"
     }
   ]
