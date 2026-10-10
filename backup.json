@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-10T12:50:07.769Z",
+  "generatedAt": "2026-10-10T13:09:29.217Z",
   "users": [
     {
       "id": "e301bf12-70f8-412c-9177-ce2a59d56aea",
@@ -23,6 +23,17 @@
       "theme": "dark",
       "createdAt": "2026-10-06T11:53:33.092Z",
       "passwordHash": "$2a$12$GERFkVM427ABSxyMwU0gSuUV7VxosY2wtO4mo1o6pjK9kC5ornl9a"
+    },
+    {
+      "id": "7c57e49b-4c02-4df9-be5e-b5699e9c0c96",
+      "username": "levi",
+      "email": "rafifahlefi1@gmail.com",
+      "name": "levi",
+      "avatar": "",
+      "bio": "",
+      "theme": "light",
+      "createdAt": "2026-10-10T13:09:27.244Z",
+      "passwordHash": "$2a$12$yTrlzBHPQ44E0FzVUJUAne/uI4SVbrylrhm80PaAZ1.w6owCdVdDW"
     }
   ],
   "vault": [],
