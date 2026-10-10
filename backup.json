@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-07T09:44:19.314Z",
+  "generatedAt": "2026-10-10T12:46:50.908Z",
   "users": [
     {
       "id": "e301bf12-70f8-412c-9177-ce2a59d56aea",
@@ -23,17 +23,6 @@
       "theme": "dark",
       "createdAt": "2026-10-06T11:53:33.092Z",
       "passwordHash": "$2a$12$GERFkVM427ABSxyMwU0gSuUV7VxosY2wtO4mo1o6pjK9kC5ornl9a"
-    },
-    {
-      "id": "de2f4296-efd1-4103-bf74-37f7691fa6d7",
-      "username": "ghaz",
-      "email": "asepgaming@gmail.com",
-      "name": "ghaz",
-      "avatar": "",
-      "bio": "",
-      "theme": "light",
-      "createdAt": "2026-10-07T09:33:08.994Z",
-      "passwordHash": "$2a$12$7QX0W8PDXoJMMGINEooCKO9Rb6WBFY9J67gUqd22f4H9w/Bn9hKxe"
     }
   ],
   "vault": [],
@@ -51,11 +40,6 @@
     {
       "id": "239d5fe6-b46b-4aa7-b0de-1640f87cade4",
       "userId": "e301bf12-70f8-412c-9177-ce2a59d56aea",
-      "date": "2026-10-07"
-    },
-    {
-      "id": "ebdffd44-5924-4d38-8267-8ad829a26f3a",
-      "userId": "de2f4296-efd1-4103-bf74-37f7691fa6d7",
       "date": "2026-10-07"
     }
   ]
