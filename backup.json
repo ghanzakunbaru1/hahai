@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-11T04:19:57.252Z",
+  "generatedAt": "2026-10-11T04:20:01.640Z",
   "users": [
     {
       "id": "e301bf12-70f8-412c-9177-ce2a59d56aea",
@@ -9,7 +9,7 @@
       "name": "radhityagp",
       "avatar": "",
       "bio": "",
-      "theme": "dark",
+      "theme": "light",
       "createdAt": "2026-10-05T14:14:39.881Z",
       "passwordHash": "$2a$12$j3vCkZCalD5w/enImt9pZu3tThymzHfBtRywVuQBVWcTeAcEsnLCW"
     },
