@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-11T03:20:00.813Z",
+  "generatedAt": "2026-10-11T03:52:22.396Z",
   "users": [
     {
       "id": "e301bf12-70f8-412c-9177-ce2a59d56aea",
@@ -36,7 +36,21 @@
       "passwordHash": "$2a$12$yTrlzBHPQ44E0FzVUJUAne/uI4SVbrylrhm80PaAZ1.w6owCdVdDW"
     }
   ],
-  "vault": [],
+  "vault": [
+    {
+      "id": "2f20e6c4-fa65-4cc2-a5e7-a1df851ac44b",
+      "userId": "e301bf12-70f8-412c-9177-ce2a59d56aea",
+      "title": "tes",
+      "subject": "pai",
+      "content": "asep",
+      "attachment": {
+        "name": "",
+        "url": ""
+      },
+      "createdAt": "2026-10-11T03:52:20.449Z",
+      "updatedAt": "2026-10-11T03:52:20.449Z"
+    }
+  ],
   "streaks": [
     {
       "id": "52b5fb13-f692-497b-a509-66bc18b76d21",
