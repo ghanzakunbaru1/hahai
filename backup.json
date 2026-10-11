@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-11T11:06:49.142Z",
+  "generatedAt": "2026-10-11T11:07:03.005Z",
   "users": [
     {
       "id": "e301bf12-70f8-412c-9177-ce2a59d56aea",
@@ -64,7 +64,7 @@
       "name": "chelsea",
       "avatar": "",
       "bio": "",
-      "theme": "light",
+      "theme": "dark",
       "createdAt": "2026-10-11T11:06:47.169Z",
       "passwordHash": "$2a$12$bUDAwL00CCMHtpR2SBiMF.K40RgKZMLy6ZaSYG5JGyR83om7Trw5K"
     }
