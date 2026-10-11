@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-11T10:22:34.902Z",
+  "generatedAt": "2026-10-11T10:22:54.731Z",
   "users": [
     {
       "id": "e301bf12-70f8-412c-9177-ce2a59d56aea",
@@ -45,6 +45,17 @@
       "theme": "light",
       "createdAt": "2026-10-11T10:22:32.919Z",
       "passwordHash": "$2a$12$vGK6ovFyi6/kBL4muSS2JefYJ5noQQ..Uc32T0F8gF.ixcQEEE6XO"
+    },
+    {
+      "id": "9cd53d9a-c29d-4961-8be7-593dacd7e232",
+      "username": "agus",
+      "email": "",
+      "name": "agus",
+      "avatar": "",
+      "bio": "",
+      "theme": "light",
+      "createdAt": "2026-10-11T10:22:52.779Z",
+      "passwordHash": "$2a$12$KIPDiuuDrqkRLyAsXsJSe.Fc9zhMgmUN71Q7sIzxwFPCJV1CT/rxK"
     }
   ],
   "vault": [
