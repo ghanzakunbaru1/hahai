@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-11T10:28:35.485Z",
+  "generatedAt": "2026-10-11T11:06:49.142Z",
   "users": [
     {
       "id": "e301bf12-70f8-412c-9177-ce2a59d56aea",
@@ -56,6 +56,17 @@
       "theme": "light",
       "createdAt": "2026-10-11T10:22:52.779Z",
       "passwordHash": "$2a$12$KIPDiuuDrqkRLyAsXsJSe.Fc9zhMgmUN71Q7sIzxwFPCJV1CT/rxK"
+    },
+    {
+      "id": "629b7768-7275-4661-bc42-d431d5d31bd5",
+      "username": "chelsea",
+      "email": "",
+      "name": "chelsea",
+      "avatar": "",
+      "bio": "",
+      "theme": "light",
+      "createdAt": "2026-10-11T11:06:47.169Z",
+      "passwordHash": "$2a$12$bUDAwL00CCMHtpR2SBiMF.K40RgKZMLy6ZaSYG5JGyR83om7Trw5K"
     }
   ],
   "vault": [
